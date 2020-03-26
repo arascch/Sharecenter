@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %} {% endblock %}  </title>
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+</head>
+<body>
+    <div id="header">
+        <span class="logo">ShareCenter</span>
+    </div>
+    <div id="content">
+        {% block content %}
+          
+        {% endblock content %}
+    </div>
+</body>
+</html>
