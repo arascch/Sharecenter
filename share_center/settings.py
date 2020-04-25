@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +128,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'media/')
 
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backend.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 ]
