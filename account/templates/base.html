@@ -52,6 +52,29 @@
 
     {% endblock content %}
   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
+<script>
+  var csrftoken = Cookies.get('csrftoken');
+  function csrfSafeMethod(method){
+    return(/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+  $.ajaxSetup({
+    beforeSend : fucntion(xhr , settings){
+      if(!csrfSafeMethod(settings.type) && !this.crossDomain){
+        xhr.setRequestHeader("X-CSRGToken" , csrftoken);
+      }
+    }
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    {% block domready%}
+    {% endblock %}
+  });
+</script>  
+
 </body>
 
 </html>
